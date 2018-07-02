@@ -1,0 +1,47 @@
+<div class="container">
+  <div id="customer_address">
+    {{invoice_data.customer.name}}
+    <br/> {{invoice_data.customer.address.address_1}}
+    <br/> {{invoice_data.customer.address.address_2}}
+    <br/> {{invoice_data.customer.address.postcode}}
+  </div>
+
+  <div id="account_summary">
+    <h2>Account Summary</h2>
+
+    <h3>Account number:</h3>
+    <span>{{invoice_data.customer.account_number}}</span>
+    <br/>
+
+    <h3>Supply address:</h3>
+    <span>{{invoice_data.customer.address.address_1}}, {{invoice_data.customer.address.address_2}}, {{invoice_data.customer.address.postcode}}</span>
+    <br/>
+
+  </div>
+
+  <table class="cost_breakdown" style="clear: both;margin-top: 50px;">
+    <tr>
+      <th>Description</th>
+      <th>Cost</th>
+    </tr>
+    {{#each invoice_data.costs }}
+
+    <tr>
+      <td>{{this.description}}</td>
+      <td>£{{this.cost}}</td>
+    </tr>
+    {{/each}}
+
+    <tr>
+      <td id="total_label">Total</td>
+      <td id="total" >£{{invoice_data.total_cost}}</td>
+    </tr>
+
+  </table>
+  <pd4ml:page.break></pd4ml:page.break>
+
+  <div class="image_container" style="margin:20px;margin-left: 50px">
+    <img src="/images/text.png" />
+  </div>
+
+</div>

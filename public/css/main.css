@@ -1,0 +1,75 @@
+body {
+  font-family: "Montserrat", sans-serif;
+}
+h2 {
+  font-size: 1em;
+}
+h3 {
+  font-size: 0.8em;
+  margin-bottom: 3px;
+}
+.footer {
+  font-size: 0.7em;
+  width: 100%;
+}
+.container {
+  margin-top: 20px;
+}
+
+#logo{
+    margin:10px; float:left
+}
+
+#header_table{
+    width:300px; float: right
+}
+
+#customer_address{
+    float:left;width:300px; font-size:1.2em;line-height:150%
+}
+#account_summary{
+    float:right;width:300px;padding:10px;background-color:lightblue
+}
+#total_label{
+    background-color:transparent;border-bottom:0px solid white;font-size:2em;text-align:right;padding-right:10px
+}
+#total{
+    background-color:transparent;border-top:3px solid black;border-bottom:3px solid black;font-size:2em
+}
+.image_container{
+    margin:20px;margin-left: 50px
+}
+.cost_breakdown {
+  border-collapse: collapse;
+  border-spacing: 0;
+  border-color: #999;
+  width: 100%;
+  clear: both;
+  margin-top: 50px;
+}
+.cost_breakdown td {
+  padding: 10px 5px;
+  border-style: solid;
+  border-width: 0px;
+  overflow: hidden;
+  word-break: normal;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-color: #999;
+  color: #444;
+  background-color: rgba(255, 240, 240, 0.5);
+}
+.cost_breakdown th {
+  font-weight: normal;
+  padding: 10px 5px;
+  border-style: solid;
+  border-width: 0px;
+  overflow: hidden;
+  word-break: normal;
+  border-top-width: 1px;
+  border-bottom-width: 1px;
+  border-color: #999;
+  color: #fff;
+  background-color: #26ade4;
+}
+

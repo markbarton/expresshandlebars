@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+<link rel="stylesheet" href="/css/main.css">
+</head>
+
+<body>
+    <pd4ml:page.header>
+        <img src="/images/logo.png" id="logo">
+
+        <table id="header_table">
+            <tr>
+                <td>Date</td>
+                <td>{{invoice_data.created}}</td>
+            </tr>
+            <tr>
+                <td>Invoice</td>
+                <td>{{invoice_data.invoice}}</td>
+            </tr>
+            <tr>
+                <td>Customer ID</td>
+                <td>{{invoice_data.customer.customer_id}}</td>
+            </tr>
+
+        </table>
+    </pd4ml:page.header>
+
+    <pd4ml:page.footer>
+        <table class="footer">
+            <tr>
+                <td style="white-space: nowrap; width:25%">Water Works Limited.
+                    <br/>
+                    <img style="height:60px" src='https://barcode.tec-it.com/barcode.ashx?data={{invoice_data.invoice}}&code=Code11&multiplebarcodes=false&translate-esc=false&unit=Px&dpi=72&imagetype=Png&rotation=0&color=%23000000&bgcolor=%23ffffff&qunit=Mm&quiet=0&dmsize=Default&modulewidth=1'
+                        alt='Barcode Generator TEC-IT' />
+                </td>
+                <td style="width:50%; text-align:center">Regiesterd Office: Clearwater Court, Vastern Road, Reading RG1 8DB.</td>
+                <td style="white-space: nowrap; width:25%; text-align:right">Company number: 02366661
+                    <br/>VAT no: GB 537-4569-15</td>
+            </tr>
+        </table>
+    </pd4ml:page.footer>
+
+    {{{body}}}
+
+</body>
+
+</html>
