@@ -1,44 +1,89 @@
-body {
-  font-family: "Montserrat", sans-serif;
-}
-h2 {
-  font-size: 1em;
-}
-h3 {
+html {
+  box-sizing: border-box;
   font-size: 0.8em;
-  margin-bottom: 3px;
-}
-.footer {
-  font-size: 0.7em;
-  width: 100%;
-}
-.container {
-  margin-top: 20px;
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+
 }
 
-#logo{
-    margin:10px; float:left
+/* Main Grid Container */
+#container {
+  height: 100vh;
+  display: grid;
+  grid-gap: 10px;
+  grid-template-rows: 100px 1fr auto;
+  grid-template-columns: minmax(auto, 1000px);
+  justify-content: space-around;
 }
 
-#header_table{
-    width:300px; float: right
+/* Header row for logo and customer info */
+header {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-gap: 10px;
+  padding: 20px;
 }
 
-#customer_address{
-    float:left;width:300px; font-size:1.2em;line-height:150%
+/* logo */
+header img {
+  align-self: center
 }
-#account_summary{
-    float:right;width:300px;padding:10px;background-color:lightblue
+
+#customer_info {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-self: center;
+  justify-self: end;
+  grid-column-gap: 20px;
+  font-size: 1.3em;
 }
-#total_label{
-    background-color:transparent;border-bottom:0px solid white;font-size:2em;text-align:right;padding-right:10px
+
+/* main invoice content*/
+section {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto auto;
+  padding: 20px;
+  grid-gap: 20px;
 }
-#total{
-    background-color:transparent;border-top:3px solid black;border-bottom:3px solid black;font-size:2em
+/* customer address */
+section address {
+  font-style: normal;
+  font-size: 1.3em;
+  line-height: 1.6em;
 }
-.image_container{
-    margin:20px;margin-left: 50px
+
+
+/*account summary information*/
+#account_summary {
+  background-color: lightblue;
+  padding: 5px 20px 20px 20px;
+  border-radius: 5px;
 }
+
+#account_summary h2 {
+  margin: 10px 10px 10px 0px;
+}
+
+#account_summary h3 {
+  margin: 10px 5px 5px 0px;
+}
+
+#account_summary p {
+  padding: 0;
+  margin: 0;
+}
+
+/* Price breakdown table */
+#price_breakdown {
+  grid-column: 1 /-1;
+  background-image: url('images/watermark.png');
+  background-position: center center;
+  background-size: 400px;
+  background-repeat: no-repeat;
+}
+
 .cost_breakdown {
   border-collapse: collapse;
   border-spacing: 0;
@@ -47,6 +92,7 @@ h3 {
   clear: both;
   margin-top: 50px;
 }
+
 .cost_breakdown td {
   padding: 10px 5px;
   border-style: solid;
@@ -59,6 +105,7 @@ h3 {
   color: #444;
   background-color: rgba(255, 240, 240, 0.5);
 }
+
 .cost_breakdown th {
   font-weight: normal;
   padding: 10px 5px;
@@ -73,3 +120,36 @@ h3 {
   background-color: #26ade4;
 }
 
+#total_label {
+  background-color: transparent;
+  border-bottom: 0px solid white;
+  font-size: 2em;
+  text-align: right;
+  padding-right: 10px
+}
+
+#total {
+  background-color: transparent;
+  border-top: 3px solid black;
+  border-bottom: 3px solid black;
+  font-size: 2em
+}
+
+/* information image */
+section img {
+  grid-column: 1 /-1;
+  justify-self: center;
+}
+
+/* footer */
+footer {
+ display:grid;
+ grid-template-columns: auto 1fr auto;
+}
+footer address{
+  justify-self: center;
+}
+footer div{
+  justify-self: end;
+  text-align: right;
+}

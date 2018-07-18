@@ -6,9 +6,8 @@ const pjson = require('./package.json');
 const app = express();
 const http = require('http').Server(app);
 const path = require('path');
-const exphbs = require('express3-handlebars');
+const exphbs = require('express-handlebars');
 const invoice_controller = require('./controllers/invoice');
-const pdf_controller = require('./controllers/pdf');
 
 const hbs = exphbs.create({
   defaultLayout: 'default',
@@ -16,14 +15,14 @@ const hbs = exphbs.create({
 });
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
-app.use(express.static(path.join(__dirname, 'public')));
-app.get('/html/invoice/:id', function(req, res, next) {
-  invoice_controller(req,res)
-});
-app.get('/invoice/:id' , function(req, res, next){
-  pdf_controller(req,res);
-})
 
+/// Static file loading
+app.use(express.static(path.join(__dirname, 'public')));
+
+/// Get Invoice Route
+app.get('/invoice/:id',function(req,res,next){
+  invoice_controller(req, res);
+})
 
 http.listen(port);
 

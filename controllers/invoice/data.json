@@ -1,22 +1,23 @@
 {
-  "customer": {
-    "name": "Fred Blogs",
-    "address": {
-      "address_1": "19 Old Kent Road",
-      "address_2": "London",
-      "postcode": "W8 8FT"
+    "customer": {
+      "name": "Fred Blogs",
+      "address": {
+        "address_1": "19 Old Kent Road",
+        "address_2": "London",
+        "postcode": "W8 8FT"
+      },
+      "customer_id":"CX5-0000758",
+      "account_number": "1112 2233 221"
     },
-    "customer_id":"CX5-0000758",
-    "account_number": "1112 2233 221"
-  },
-  "invoice":"21334223",
-  "costs":[
-      {"description":"Water Base","cost":68.77},
-      {"description":"Water Usage","cost":112.98},
-      {"description":"Wastewater Base","cost":33.00},
-      {"description":"Wastewater Usage","cost":7.77},
-      {"description":"Recycling Surcharge","cost":44.44},
-      {"description":"Swimming Pool Surcharge","cost":30.00}
-  ]
-
-}
+    "invoice":"21334223",
+    "costs":[
+        {"description":"Water Base","cost":68.77},
+        {"description":"Water Usage","cost":112.98},
+        {"description":"Wastewater Base","cost":33.00},
+        {"description":"Wastewater Usage","cost":7.77},
+        {"description":"Recycling Surcharge","cost":44.44},
+        {"description":"Swimming Pool Surcharge","cost":30.00}
+    ]
+  
+  }
+  

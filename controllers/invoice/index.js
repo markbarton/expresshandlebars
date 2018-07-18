@@ -1,20 +1,26 @@
 const logger = require('../../logger');
-const moment = require('moment');
-
 const data =  require('./data.json');
-module.exports = function(req, res){
+const moment = require('moment');
+const helpers = require('./helpers');
+module.exports = function (req,res){
+
     logger.debug(`HTML Generation for ${req.params.id}`);
-    // calculate costs
+
     const total_cost = data.costs.reduce(
         (accumlator, currentValue) => accumlator + currentValue.cost,
         0
     );
     data.total_cost = total_cost.toFixed(2);
-
-    // format todays date
+    console.log(data.total_cost)
     data.created = moment().format('Do MMM YYYY');
-
-    res.render('invoice', {invoice_data: data});
+    
+    res.render('invoice',{
+        invoice_data: data,
+        helpers:{
+            gmap_link: function(postcode){ 
+                return helpers.gmap_link(postcode)}
+        }
+    })
 
 
 }

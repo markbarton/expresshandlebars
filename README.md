@@ -1,4 +1,4 @@
-# egghead-node-java-pdf
-Example code to support the Egghead lesson demonstrating a NodeJS application calling a Java program to create a PDF
+# egghead-handlebars
+Example code to support the Egghead lesson demonstrating Handlebars and Express
 
-This code supports the Egghead Lesson [Calling Java code from NodeJS to produce PDFs](https://egghead.io/lessons/egghead-calling-java-code-from-nodejs-to-produce-pdfs)
+This code supports the Egghead Lesson [Getting started with Handlebars and Express](https://egghead.io/lessons/egghead-calling-java-code-from-nodejs-to-produce-pdfs)

@@ -1,47 +1,63 @@
-<div class="container">
-  <div id="customer_address">
-    {{invoice_data.customer.name}}
-    <br/> {{invoice_data.customer.address.address_1}}
-    <br/> {{invoice_data.customer.address.address_2}}
-    <br/> {{invoice_data.customer.address.postcode}}
-  </div>
+<header>
+    <img src="/images/logo.png" />
+    <div id="customer_info">
+        <div>Date</div>
+        <div>{{invoice_data.created}}</div>
+        <div>Invoice</div>
+        <div>{{invoice_data.invoice}}</div>
+        <div>Customer ID</div>
+        <div>{{invoice_data.customer.customer_id}}</div>
+    </div>
+</header>
 
-  <div id="account_summary">
-    <h2>Account Summary</h2>
+<section>
+    <address>
+       {{invoice_data.customer.name}}
+        <br/> {{invoice_data.customer.address.address_1}}
+        <br/> {{invoice_data.customer.address.address_2}}
+        <br/> {{{gmap_link invoice_data.customer.address.postcode}}}
+    </address>
 
-    <h3>Account number:</h3>
-    <span>{{invoice_data.customer.account_number}}</span>
-    <br/>
+    <div id="account_summary">
+        <h2>Account Summary</h3>
+        <h3>Account Number</h4>
+        <p>{{invoice_data.customer.account_number}}</p>
+        <h3>Supply Address</h4>
+        <p>{{invoice_data.customer.address.address_1}}, {{invoice_data.customer.address.address_2}}, {{invoice_data.customer.address.postcode}}</p>
+    </div>
 
-    <h3>Supply address:</h3>
-    <span>{{invoice_data.customer.address.address_1}}, {{invoice_data.customer.address.address_2}}, {{invoice_data.customer.address.postcode}}</span>
-    <br/>
+    <div id="price_breakdown">
+        <table class="cost_breakdown" style="clear: both;margin-top: 50px;">
+            <tbody>
+                <tr>
+                    <th>Description</th>
+                    <th>Cost</th>
+                </tr>
+                {{#each invoice_data.costs}}
+                <tr>
+                    <td>{{this.description}}</td>
+                    <td>£{{this.cost}}</td>
+                </tr>
+                {{/each}}
+                <tr>
+                    <td id="total_label">Total</td>
+                    <td id="total">£{{invoice_data.total_cost}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <img src="/images/text.png">
+</section>
 
-  </div>
+<footer>
+    <img style="height:60px" src='https://barcode.tec-it.com/barcode.ashx?data=123456789&code=Code11&multiplebarcodes=false&translate-esc=false&unit=Px&dpi=72&imagetype=Png&rotation=0&color=%23000000&bgcolor=%23ffffff&qunit=Mm&quiet=0&dmsize=Default&modulewidth=1'
+        alt='Barcode Generator TEC-IT' />
+    <address>
+        Regiesterd Office: Clearwater Court, Vastern Road, Reading RG1 8DB.
+    </address>
 
-  <table class="cost_breakdown" style="clear: both;margin-top: 50px;">
-    <tr>
-      <th>Description</th>
-      <th>Cost</th>
-    </tr>
-    {{#each invoice_data.costs }}
-
-    <tr>
-      <td>{{this.description}}</td>
-      <td>£{{this.cost}}</td>
-    </tr>
-    {{/each}}
-
-    <tr>
-      <td id="total_label">Total</td>
-      <td id="total" >£{{invoice_data.total_cost}}</td>
-    </tr>
-
-  </table>
-  <pd4ml:page.break></pd4ml:page.break>
-
-  <div class="image_container" style="margin:20px;margin-left: 50px">
-    <img src="/images/text.png" />
-  </div>
-
-</div>
+    <div>
+        Company number: 02366661
+        <br/>VAT no: GB 537-4569-15
+    </div>
+</footer>

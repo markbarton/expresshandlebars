@@ -13,7 +13,6 @@ var consoleLogger = new winston.transports.Console({
     colorize: true
 })
 
-
 var logger = new winston.Logger({
     transports: [
         consoleLogger
